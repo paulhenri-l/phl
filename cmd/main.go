@@ -4,14 +4,18 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"os"
+	"phl/cmd/env"
+	"phl/cmd/template"
 )
 
 var rootCmd = &cobra.Command{
 	Use:   "phl",
-	Short: "PHL is Paul-Henri's development and managment console",
-	Run: func(cmd *cobra.Command, args []string) {
-		// Do Stuff Here
-	},
+	Short: "PHL is Paul-Henri's development and management console",
+}
+
+func init() {
+	template.InstallCommands(rootCmd)
+	env.InstallCommands(rootCmd)
 }
 
 func Execute() {
