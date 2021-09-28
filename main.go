@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "phl/cmd"
 
 func main() {
-	fmt.Print("Hello")
+	cmd.Execute()
 }
